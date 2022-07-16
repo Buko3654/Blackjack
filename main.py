@@ -46,17 +46,20 @@ def play_blackjack():
   player_hand = []
   dealer_hand = []
   should_continue = True
-  
+
+  #deal 2 cards each
   for _ in range(2):
     player_hand.append(deal())
     dealer_hand.append(deal())
-    
+
+  #loop to actually play
   while should_continue:
     player_score = calculate_score(player_hand)
     dealer_score = calculate_score(dealer_hand)
     print(f"Your cards: {player_hand}, current score: {player_score}")
     print(f"Dealer's first card: {dealer_hand[0]}")
 
+    #stops game if blackjack or bust
     if player_score == 0 or dealer_score == 0 or player_score > 21:
       should_continue = False
     else:
@@ -66,6 +69,7 @@ def play_blackjack():
       else:
         should_continue = False
 
+  #makes dealer hit if 16 or below and hasn't busted
   while dealer_score != 0 and dealer_score < 17:
     dealer_hand.append(deal())
     dealer_score = calculate_score(dealer_hand)
@@ -74,6 +78,7 @@ def play_blackjack():
   print(f"   Computer's final hand: {dealer_hand}, final score: {dealer_score}")
   print(compare_score(player_score, dealer_score))
 
+#plays game until choose not to
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
   clear()
   play_blackjack()
