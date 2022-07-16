@@ -72,7 +72,7 @@ def play_blackjack():
 
   print(f"   Your final hand: {player_hand}, final score: {player_score}")
   print(f"   Computer's final hand: {dealer_hand}, final score: {dealer_score}")
-  print(compare(player_score, dealer_score))
+  print(compare_score(player_score, dealer_score))
 
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
   clear()
