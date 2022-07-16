@@ -9,8 +9,6 @@ def deal():
   card = random.choice(cards)
   return card
 
-
-
 def calculate_score(cards):
   """Take a list of cards and return the score calculated from the cards"""
   #checks for Blackjack
